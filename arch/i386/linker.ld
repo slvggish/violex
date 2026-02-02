@@ -1,21 +1,21 @@
 ENTRY(_start)
 
 SECTIONS {
-    . = 1M;
+	. = 1M;
     
-    .text : {
-        *(.text*)
-    }
+	.text : {
+		*(.text*)
+	}
 
-    .rodata : {
-        *(.rodata*)
-    }
+	.rodata : {
+		*(.rodata*)
+	}
 
-    .data : {
-        *(.data*)
-    }
+	.data : {
+		*(.data*)
+	}
 
-    .bss : {
-        *(.bss*)
-    }
+	.bss : {
+		*(.bss*)
+	}
 }

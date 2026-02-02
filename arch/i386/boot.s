@@ -6,14 +6,14 @@ CHECKSUM    equ -(MAGIC + FLAGS)
 
 section .multiboot
 align 4
-    dd MAGIC
-    dd FLAGS
-    dd CHECKSUM
+	dd MAGIC
+	dd FLAGS
+	dd CHECKSUM
 
 section .bss
 align 16
 stack_bottom:
-    resb 16384
+	resb 16384
 stack_top:
 
 section .text
@@ -21,14 +21,14 @@ global _start
 extern kernel_main
 
 _start:
-    mov esp, stack_top
+	mov esp, stack_top
 
-    push 0
-    popf
+	push 0
+	popf
 
-    call kernel_main
+	call kernel_main
 
-    cli
+	cli
 .hang:
-    hlt
-    jmp .hang
+	hlt
+	jmp .hang
